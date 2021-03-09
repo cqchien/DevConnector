@@ -7,6 +7,10 @@ const PORT = process.env.PORT || 5000;
 // Connect database
 connectDB();
 
+// Middlewares
+//TO DO: Convert req.body from json to object
+app.use(express.json({ extended: false }));
+
 // Routes
 app.use("/api", require("./routes/index"));
 
