@@ -1,11 +1,11 @@
 const express = require("express");
-const getAll = require("../../controller/user/getAll");
+const register = require("../../controller/user/register");
 const validateRegisterUser = require("../../middleware/register/user");
 const router = express.Router();
 
 // @Route   /api/user
-// @desc    Get all user
+// @desc    Register new user
 // @access  Public
-router.post("/", validateRegisterUser, getAll);
+router.post("/register", validateRegisterUser, register);
 
 module.exports = router;
