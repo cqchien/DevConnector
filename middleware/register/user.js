@@ -1,5 +1,6 @@
 const { check, validationResult } = require("express-validator");
 
+// Validate name, email and password when new person register
 const validateRegisterUser = async (req, res, next) => {
   try {
     await check("name", "Name is require").not().isEmpty().run(req);
