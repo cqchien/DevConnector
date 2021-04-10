@@ -45,11 +45,10 @@ module.exports = register = async (req, res, next) => {
     const expiresIn = config.get("expiresIn");
     jwt.sign(payload, secret, { expiresIn }, (error, token) => {
       if (error) throw error;
-      return res.json({ token });
+      return res.status(200).json({ token });
     });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: { msg: "Server Error" } });
-    next();
+    return res.status(500).json({ error: { msg: "Server Error" } });
   }
 };
