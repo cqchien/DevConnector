@@ -14,5 +14,5 @@ router.post("/register", validateRegisterUser, register);
 // @Route   /api/user/login
 // @desc    login
 // @access  Public
-router.post("/login", authorize, validateLogin, login);
+router.post("/login", validateLogin, login);
 module.exports = router;
