@@ -12,11 +12,11 @@ const authorize = (req, res, next) => {
     const decoded = jwt.verify(token, secret);
 
     req.user = decoded;
-    next()
   } catch (error) {
     console.log(error);
-    return res.status(401).json({ error: { msg: "Token is invalid" } })
+    return res.status(401).json({ error: { msg: "Token is invalid" } });
   }
+  next();
 };
 
 module.exports = authorize;
