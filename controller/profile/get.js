@@ -12,7 +12,7 @@ const getProfile = async (req, res, next) => {
     return res.status(200).json({ profileWithUser });
   } catch (error) {
     console.log(error);
-    return res.status(500).json("Server Error");
+    return res.status(500).res.status(500).json({ error: { msg: "Server Error" } });
   }
 };
 
