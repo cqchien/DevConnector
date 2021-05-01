@@ -3,8 +3,14 @@ const bcrypt = require("bcryptjs");
 const config = require("config");
 const jwt = require("jsonwebtoken");
 
-
-module.exports = login = async (req, res, next) => {
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns token
+ */
+const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
@@ -39,3 +45,5 @@ module.exports = login = async (req, res, next) => {
     next();
   }
 };
+
+module.exports = login

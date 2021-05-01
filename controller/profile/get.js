@@ -1,5 +1,11 @@
 const { ProfileModel } = require("../../models");
 
+/**
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns profile with user
+ */
 const getProfile = async (req, res, next) => {
   try {
     const { id: userId } = req.user;
