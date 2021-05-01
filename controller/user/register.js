@@ -4,7 +4,14 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 
-module.exports = register = async (req, res, next) => {
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns token
+ */
+const register = async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
 
@@ -52,3 +59,5 @@ module.exports = register = async (req, res, next) => {
     return res.status(500).json({ error: { msg: "Server Error" } });
   }
 };
+ 
+module.exports = register

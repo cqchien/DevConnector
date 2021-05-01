@@ -10,7 +10,6 @@ const authorize = (req, res, next) => {
   try {
     const secret = config.get("jwtSecret");
     const decoded = jwt.verify(token, secret);
-
     req.user = decoded;
   } catch (error) {
     console.log(error);
